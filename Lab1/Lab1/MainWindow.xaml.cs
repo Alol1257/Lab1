@@ -206,7 +206,7 @@ namespace Lab1
             Canvas.Children.Add(e);
         }
 
-        private void DrawShapes(List<Shapes> shapes)
+        private void DrawShapes(List<Shapes> shapes) // полиморфным?
         {
             Canvas.Children.Clear();
 
@@ -279,6 +279,15 @@ namespace Lab1
 
             DrawShapes(shapes);
 
+            searchResult.Items.Clear();
+            searchRes.Clear();
+
+            foreach (var shape in shapes)
+            {
+                searchResult.Items.Add(shape.GetTitle());
+                searchRes.Add(shape);
+            }
+
             shapeTitle.Clear();
         }
 
@@ -338,18 +347,6 @@ namespace Lab1
             shapes.Clear();
             searchRes.Clear();
             searchResult.Items.Clear();
-        }
-
-        private void PrintBtn_Click(object sender, RoutedEventArgs e)
-        {
-            searchResult.Items.Clear();
-            searchRes.Clear();
-
-            foreach (var shape in shapes)
-            {
-                searchResult.Items.Add(shape.GetTitle());
-                searchRes.Add(shape);
-            }
         }
     }
 }

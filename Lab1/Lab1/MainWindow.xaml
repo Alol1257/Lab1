@@ -18,11 +18,10 @@
             <ComboBoxItem Content="Прямоугольник"/>
             <ComboBoxItem Content="Круг"/>
         </ComboBox>
-        <ListBox x:Name="searchResult" HorizontalAlignment="Left" Height="97" Margin="645,246,0,0" VerticalAlignment="Top" Width="134" SelectionChanged="searchResult_SelectionChanged" Focusable="False"/>
+        <ListBox x:Name="searchResult" HorizontalAlignment="Left" Height="97" Margin="645,277,0,0" VerticalAlignment="Top" Width="134" SelectionChanged="searchResult_SelectionChanged" Focusable="False"/>
         <TextBox x:Name="shapeTitle" HorizontalAlignment="Left" Height="24" Margin="645,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
         <Label Content="Создание фигур" HorizontalAlignment="Left" Margin="637,10,0,0" VerticalAlignment="Top" Height="26" Focusable="False"/>
         <Button Content="Очистить" HorizontalAlignment="Left" Height="24" Margin="645,165,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click_1"/>
-        <Label Content="Созданные фигуры" HorizontalAlignment="Left" Height="29" Margin="637,217,0,0" VerticalAlignment="Top" Width="119"/>
-        <Button x:Name="PrintBtn" Content="Вывести названия" HorizontalAlignment="Left" Height="24" Margin="645,354,0,0" VerticalAlignment="Top" Width="134" Click="PrintBtn_Click"/>
+        <Label Content="Созданные фигуры" HorizontalAlignment="Left" Height="29" Margin="637,248,0,0" VerticalAlignment="Top" Width="119"/>
     </Grid>
 </Window>
