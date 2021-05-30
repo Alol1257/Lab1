@@ -9,7 +9,7 @@
     <Grid>
         <Canvas x:Name="Canvas" HorizontalAlignment="Left" Height="414" Margin="10,0,0,0" VerticalAlignment="Center" Width="604" Background="#FFF0DDDD" Focusable ="True" KeyDown="Canvas_KeyDown"/>
         <Button Content="Создать фигуру" HorizontalAlignment="Left" Height="24" Margin="645,130,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click" Focusable="False"/>
-        <Button x:Name="RndShift" Content="Случайное смещение" HorizontalAlignment="Left" Height="24" Margin="645,167,0,0" VerticalAlignment="Top" Width="134" Click="RndShift_Click" Focusable="False"/>
+        <Button x:Name="RndShift" Content="Случайное смещение" HorizontalAlignment="Left" Height="24" Margin="645,389,0,0" VerticalAlignment="Top" Width="134" Click="RndShift_Click" Focusable="False"/>
         <ComboBox x:Name="ShapesType" HorizontalAlignment="Left" Height="24" Margin="645,72,0,0" VerticalAlignment="Top" Width="134" Focusable="False">
             <ComboBoxItem Content="Точка"/>
             <ComboBoxItem Content="Линия"/>
@@ -18,11 +18,11 @@
             <ComboBoxItem Content="Прямоугольник"/>
             <ComboBoxItem Content="Круг"/>
         </ComboBox>
-        <ListBox x:Name="searchResult" HorizontalAlignment="Left" Height="97" Margin="645,319,0,0" VerticalAlignment="Top" Width="134" SelectionChanged="searchResult_SelectionChanged" Focusable="False"/>
-        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="24" Margin="645,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+        <ListBox x:Name="searchResult" HorizontalAlignment="Left" Height="97" Margin="645,246,0,0" VerticalAlignment="Top" Width="134" SelectionChanged="searchResult_SelectionChanged" Focusable="False"/>
         <TextBox x:Name="shapeTitle" HorizontalAlignment="Left" Height="24" Margin="645,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
         <Label Content="Создание фигур" HorizontalAlignment="Left" Margin="637,10,0,0" VerticalAlignment="Top" Height="26" Focusable="False"/>
-        <Label Content="Поиск фигур" HorizontalAlignment="Left" Margin="637,215,0,0" VerticalAlignment="Top" Width="81" Focusable="False"/>
-        <Button x:Name="searchButton" Content="Найти" HorizontalAlignment="Left" Height="24" Margin="645,246,0,0" VerticalAlignment="Top" Width="134" Click="searchButton_Click" Focusable="False"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Height="24" Margin="645,165,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click_1"/>
+        <Label Content="Созданные фигуры" HorizontalAlignment="Left" Height="29" Margin="637,217,0,0" VerticalAlignment="Top" Width="119"/>
+        <Button x:Name="PrintBtn" Content="Вывести названия" HorizontalAlignment="Left" Height="24" Margin="645,354,0,0" VerticalAlignment="Top" Width="134" Click="PrintBtn_Click"/>
     </Grid>
 </Window>

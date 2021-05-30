@@ -13,39 +13,39 @@ namespace Lab1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string hex;
-        private int numHex = 0;
-        private string hexValue;
+        //private string hex;
+        //private int numHex = 0;
+        //private readonly string hexValue;
 
-        private List<string> colors = new();
-        private List<Shapes> shapes = new();
-        private List<Shapes> searchRes = new();
+        //private readonly List<string> colors = new();
+        private readonly List<Shapes> shapes = new();
+        private readonly List<Shapes> searchRes = new();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            for (int i = 0; i < 100; i++)
-            {
-                Random rnd = new();
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    Random rnd = new();
 
-                int intValue = rnd.Next(0, 16777215);
+            //    int intValue = rnd.Next(0, 16777215);
 
-                hexValue = intValue.ToString("X6");
+            //    hexValue = intValue.ToString("X6");
 
-                colors.Add("#" + hexValue);
-            }
+            //    colors.Add("#" + hexValue);
+            //}
 
-            hex = colors[0];
+            //hex = colors[0];
         }
 
-        private void ColorRandomize()
-        {
-            hex = colors[numHex];
+        //private void ColorRandomize()
+        //{
+        //    hex = colors[numHex];
 
-            if (numHex > 98) { numHex = 0; }
-            else { numHex++; }
-        }
+        //    if (numHex > 98) { numHex = 0; }
+        //    else { numHex++; }
+        //}
 
         private tPoint GetPoint()
         {
@@ -109,7 +109,7 @@ namespace Lab1
         {
             tPoint center = GetPoint();
 
-            Random rnd = new Random();
+            Random rnd = new();
 
             double height = rnd.Next(30, 60);
             double width = rnd.Next(30, 60);
@@ -125,7 +125,7 @@ namespace Lab1
         {
             tPoint center = GetPoint();
 
-            Random rnd = new Random();
+            Random rnd = new();
 
             double height = rnd.Next(30, 60);
 
@@ -279,11 +279,7 @@ namespace Lab1
 
             DrawShapes(shapes);
 
-            foreach (var shape in shapes)
-            {
-                searchResult.Items.Add(shape.GetTitle());
-                searchRes.Add(shape);
-            }
+            shapeTitle.Clear();
         }
 
         private void RndShift_Click(object sender, RoutedEventArgs e)
@@ -297,18 +293,6 @@ namespace Lab1
             }
 
             DrawShapes(shapes);
-        }
-
-        private void searchButton_Click(object sender, RoutedEventArgs e)
-        {
-            //foreach(var shape in shapes)
-            //{
-            //    if(shape.GetTitle() == searchBox.Text)
-            //    {
-            //        searchResult.Items.Add(shape.GetTitle());
-            //        searchRes.Add(shape);
-            //    }
-            //}
         }
 
         private void searchResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -327,16 +311,16 @@ namespace Lab1
                 switch (e.Key)
                 {
                     case Key.W:
-                           shape.ShiftY(-10);
+                        shape.ShiftY(-10);
                         break;
                     case Key.S:
-                           shape.ShiftY(10);
+                        shape.ShiftY(10);
                         break;
                     case Key.A:
-                           shape.ShiftX(-10);
+                        shape.ShiftX(-10);
                         break;
                     case Key.D:
-                           shape.ShiftX(10);
+                        shape.ShiftX(10);
                         break;
                     default:
                         DrawShapes(shapes);
@@ -346,6 +330,26 @@ namespace Lab1
                 DrawShapes(shapes);
             }
             
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Canvas.Children.Clear();
+            shapes.Clear();
+            searchRes.Clear();
+            searchResult.Items.Clear();
+        }
+
+        private void PrintBtn_Click(object sender, RoutedEventArgs e)
+        {
+            searchResult.Items.Clear();
+            searchRes.Clear();
+
+            foreach (var shape in shapes)
+            {
+                searchResult.Items.Add(shape.GetTitle());
+                searchRes.Add(shape);
+            }
         }
     }
 }
